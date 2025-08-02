@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "The mTracker",
+  "version": "0.0.1",
+  "description": "This is a minimal task tracker. Turn it on to keep track of your computer tasks. Everything is very simple. One column (no Kanban). Take tasks from top to bottom and complete them. You can also set a timer and track how much time is left. If plans change, just reorder the tasks. And everything is cool.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "permissions": ["activeTab", "scripting"],
+
+    "content_scripts": [
+    {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+    }
+    ],
+    "background": {
+  "service_worker": "background.js"
+}
+}
